@@ -210,6 +210,8 @@ class SortFilterQuery(Query):
             filter_category: List[str],
             mapper: Dict[str, str]
     ):
+        if mapper is None:
+            mapper = {}
         query = self._filter(
             cls, _map_col_id(filter_col_id, mapper), filter_type, filter_word, filter_to, filter_category
         )
@@ -241,6 +243,8 @@ class SortFilterQuery(Query):
             filter_category: List[str],
             mapper: Dict[str, str]
     ):
+        if mapper is None:
+            mapper = {}
         return self._filter(
             cls, _map_col_id(filter_col_id, mapper), filter_type, filter_word, filter_to, filter_category
         ).count()

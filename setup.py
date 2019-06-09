@@ -8,6 +8,8 @@ install_requires = [
 extras_require = {
     'test': [
         'nose2',
+        'Flask',
+        'Flask-SQLAlchemy',
     ]
 }
 
