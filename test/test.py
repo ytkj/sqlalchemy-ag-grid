@@ -98,7 +98,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(answer, target)
 
     @it.should('filter single text endsWith')
-    def test57():
+    def test7():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('filterColId', 'text1'),
@@ -112,7 +112,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(answer, target)
 
     @it.should('filter single text contains')
-    def test7():
+    def test8():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('filterColId', 'text1'),
@@ -126,7 +126,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(answer, target)
 
     @it.should('filter single text notContains')
-    def test8():
+    def test9():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('filterColId', 'text1'),
@@ -140,7 +140,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(answer, target)
 
     @it.should('filter single number equals')
-    def test9():
+    def test10():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('filterColId', 'number1'),
@@ -154,7 +154,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(answer, target)
 
     @it.should('filter single number notEqual')
-    def test10():
+    def test11():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('filterColId', 'number1'),
@@ -168,7 +168,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(answer, target)
 
     @it.should('filter single number lessThan')
-    def test11():
+    def test12():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('filterColId', 'number1'),
@@ -182,7 +182,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(answer, target)
 
     @it.should('filter single number lessThanOrEqual')
-    def test12():
+    def test13():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('filterColId', 'number1'),
@@ -196,7 +196,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(answer, target)
 
     @it.should('filter single number greaterThan')
-    def test13():
+    def test14():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('filterColId', 'number1'),
@@ -210,7 +210,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(answer, target)
 
     @it.should('filter single number greaterThanOrEqual')
-    def test14():
+    def test15():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('filterColId', 'number1'),
@@ -224,7 +224,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(answer, target)
 
     @it.should('filter single number inRange')
-    def test15():
+    def test16():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('filterColId', 'number1'),
@@ -239,7 +239,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(answer, target)
 
     @it.should('filter single rank top')
-    def test16():
+    def test17():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('filterColId', 'number1'),
@@ -254,7 +254,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(len(items), 100)
 
     @it.should('filter single rank greaterThan')
-    def test17():
+    def test18():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('filterColId', 'number1'),
@@ -268,7 +268,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(answer, target)
 
     @it.should('filter single rank greaterThanOrEqual')
-    def test18():
+    def test19():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('filterColId', 'number1'),
@@ -282,7 +282,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(answer, target)
 
     @it.should('filter double text equals and number greaterThan')
-    def test19():
+    def test20():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('filterColId', 'text1'),
@@ -303,7 +303,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(answer2, target2)
 
     @it.should('filter double text equals and number inRange')
-    def test20():
+    def test21():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('filterColId', 'text1'),
@@ -326,7 +326,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(answer2, target2)
 
     @it.should('filter double text equals and rank top')
-    def test21():
+    def test22():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('filterColId', 'text1'),
@@ -344,7 +344,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(answer, target)
 
     @it.should('filter double rank top and text equals')
-    def test22():
+    def test23():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('filterColId', 'number1'),
@@ -362,7 +362,7 @@ with such.A('sort_filter_by_args()') as it:
             it.assertEqual(answer, target)
 
     @it.should('filter and sort')
-    def test23():
+    def test24():
         with app.app_context():
             args = ImmutableMultiDict([
                 ('sortColId', 'text1'),
@@ -383,5 +383,157 @@ with such.A('sort_filter_by_args()') as it:
             answer = {'echo5', 'echo4', 'charlie5', 'charlie4'}
             it.assertEqual(answer, target)
 
+    @it.should('mapper')
+    def test25():
+        with app.app_context():
+            args = ImmutableMultiDict([
+                ('filterColId', 'text_1'),
+                ('filterType', 'equals'),
+                ('filterWord', 'bravo'),
+                ('filterCategory', 'text'),
+                ('filterColId', 'number_1'),
+                ('filterType', 'greaterThan'),
+                ('filterWord', 3),
+                ('filterCategory', 'number'),
+            ])
+            mapper = {
+                'text_1': 'text1',
+                'number_1': 'number1',
+            }
+            items = ItemMapper.query.sort_filter_by_args(ItemMapper, args, mapper).all()
+            target = set(['{}{}'.format(i.text1, i.number1) for i in items])
+            answer = {'bravo4', 'bravo5'}
+            it.assertEqual(answer, target)
 
-it.createTests(globals())
+    it.createTests(globals())
+
+with such.A('sort_filter_by_json()') as it:
+
+    @it.has_setup
+    def setup():
+        with app.app_context():
+            db.create_all()
+            db.session.execute(ItemMapper.__table__.insert(), data)
+            db.session.commit()
+
+    @it.has_teardown
+    def teardown():
+        with app.app_context():
+            db.drop_all()
+
+    @it.should('single sort')
+    def test26():
+        with app.app_context():
+            json = dict(
+                sortColId=['text1'],
+                sortType=['asc'],
+            )
+            items = ItemMapper.query.sort_filter_by_json(ItemMapper, json).all()
+            target = [i.text1 for i in items]
+            answer = words * 125
+            answer.sort()
+            it.assertEqual(answer, target)
+
+    @it.should('second inRange')
+    def test27():
+        with app.app_context():
+            json = dict(
+                filterColId=['text1', 'number1'],
+                filterType=['equals', 'inRange'],
+                filterWord=['bravo', 2],
+                filterTo=[None, 4],
+                filterCategory=['text', 'number'],
+            )
+            items = ItemMapper.query.sort_filter_by_json(ItemMapper, json).all()
+            target1 = set([i.text1 for i in items])
+            answer1 = {'bravo'}
+            target2 = set([i.number1 for i in items])
+            answer2 = {2, 3, 4}
+            it.assertEqual(answer1, target1)
+            it.assertEqual(answer2, target2)
+
+    it.createTests(globals())
+
+with such.A('filter_counter_by_args') as it:
+
+    @it.has_setup
+    def setup():
+        with app.app_context():
+            db.create_all()
+            db.session.execute(ItemMapper.__table__.insert(), data)
+            db.session.commit()
+
+    @it.has_teardown
+    def teardown():
+        with app.app_context():
+            db.drop_all()
+
+    @it.should('single filter text equals')
+    def test28():
+        with app.app_context():
+            args = ImmutableMultiDict([
+                ('filterColId', 'text1'),
+                ('filterType', 'equals'),
+                ('filterWord', 'bravo'),
+                ('filterCategory', 'text'),
+            ])
+            target = ItemMapper.query.filter_count_by_args(ItemMapper, args)
+            it.assertEqual(target, 125)
+
+    @it.should('double filter text equals and number greaterThan')
+    def test29():
+        with app.app_context():
+            args = ImmutableMultiDict([
+                ('filterColId', 'text1'),
+                ('filterType', 'equals'),
+                ('filterWord', 'bravo'),
+                ('filterCategory', 'text'),
+                ('filterColId', 'number1'),
+                ('filterType', 'greaterThan'),
+                ('filterWord', 3),
+                ('filterCategory', 'number'),
+            ])
+            target = ItemMapper.query.filter_count_by_args(ItemMapper, args)
+            it.assertEqual(target, 50)
+
+    it.createTests(globals())
+
+with such.A('filter_counter_by_json') as it:
+
+    @it.has_setup
+    def setup():
+        with app.app_context():
+            db.create_all()
+            db.session.execute(ItemMapper.__table__.insert(), data)
+            db.session.commit()
+
+    @it.has_teardown
+    def teardown():
+        with app.app_context():
+            db.drop_all()
+
+    @it.should('single filter text equals')
+    def test30():
+        with app.app_context():
+            json = dict(
+                filterColId=['text1'],
+                filterType=['equals'],
+                filterWord=['bravo'],
+                filterCategory=['text']
+            )
+            target = ItemMapper.query.filter_count_by_json(ItemMapper, json)
+            it.assertEqual(target, 125)
+
+    @it.should('double filter text equals and number greaterThan')
+    def test31():
+        with app.app_context():
+            json = dict(
+                filterColId=['text1', 'number1'],
+                filterType=['equals', 'greaterThan'],
+                filterWord=['bravo', 3],
+                filterCategory=['text', 'number'],
+            )
+            target = ItemMapper.query.filter_count_by_json(ItemMapper, json)
+            it.assertEqual(target, 50)
+
+    it.createTests(globals())
