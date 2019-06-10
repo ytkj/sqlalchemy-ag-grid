@@ -32,10 +32,8 @@ This library is server-side counter part for [ag-grid-axios](https://www.npmjs.c
         __tablename__: str = 'item'
     
         id = sa.Column(sa.Integer, primary_key=True)
-        text1 = sa.Column(sa.String, nullable=False)
-        text2 = sa.Column(sa.String, nullable=False)
-        number1 = sa.Column(sa.Integer, nullable=False)
-        number2 = sa.Column(sa.Integer, nullable=False)
+        name = sa.Column(sa.String, nullable=False)
+        age = sa.Column(sa.Integer, nullable=False)
     ```
 
 1. define `Flask` application
