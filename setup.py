@@ -15,7 +15,7 @@ extras_require = {
 
 setuptools.setup(
     name='sqlalchemy_ag_grid',
-    version='0.0.1',
+    version='0.0.2',
     describtion='SQLAlchemy Query class suitable for AgGrid request',
     url='https://github.com/ytkj/sqlalchemy-ag-grid',
     author='ytkj',
