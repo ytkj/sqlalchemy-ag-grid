@@ -3,13 +3,13 @@ import setuptools
 install_requires = [
     'SQLAlchemy',
     'Werkzeug',
+    'Flask-SQLAlchemy',
 ]
 
 extras_require = {
     'test': [
         'nose2',
         'Flask',
-        'Flask-SQLAlchemy',
     ]
 }
 
