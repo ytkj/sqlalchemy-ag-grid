@@ -1,6 +1,6 @@
 from typing import List, Any, Dict
 from itertools import zip_longest, chain
-from sqlalchemy.orm import Query
+from flask_sqlalchemy import BaseQuery
 from sqlalchemy import Column
 from werkzeug.datastructures import ImmutableMultiDict
 
@@ -114,7 +114,7 @@ def _map_col_id(requested_col_ids: List[str], mapper: Dict[str, str]) -> List[st
     return [map_if_exist(col_id, mapper) for col_id in requested_col_ids]
 
 
-class SortFilterQuery(Query):
+class SortFilterQuery(BaseQuery):
 
     def sort_filter_by_args(self, cls: Any, args: ImmutableMultiDict, mapper: Dict[str, str] = None):
         """
